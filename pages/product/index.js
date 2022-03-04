@@ -1,11 +1,44 @@
+import Link from 'next/link';
 import React from 'react';
 
-const index = () => {
-    return (
-        <div>
-          <h1>Product page create</h1>  
-        </div>
-    );
+const ProductList = ({productId = 100}) => {
+  return (
+    <div>
+      <Link href="/">
+        <a>Home</a>
+      </Link>
+      <h1>
+        <Link href="/product/1">
+          <a>
+            Product 1
+          </a>
+        </Link>
+
+      </h1>
+    <h1>  <Link href="/product/2">
+        <a>
+          Product 2
+        </a>
+      </Link></h1>
+
+   <h1>
+   <Link href="/product/3">
+        <a>
+          Product 3
+        </a>
+      </Link>
+   </h1>
+   <h1>
+   <Link href={`/product/${productId}`}>
+        <a>
+          Product 3
+        </a>
+      </Link>
+   </h1>
+   
+
+    </div>
+  );
 };
 
-export default index;
+export default ProductList;
